@@ -44,7 +44,7 @@ export default function NotificationsPanel({ open, onClose }) {
 
       <div className="notif-list" role="list">
         {items.length === 0 ? (
-          <div className="empty muted">No notifications yet</div>
+          <div className="card empty" style={{ padding: '1.25rem' }}>No notifications yet</div>
         ) : (
           items.map((n) => (
             <div

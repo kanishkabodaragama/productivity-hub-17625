@@ -9,3 +9,7 @@ This is a warning and does not break the build in CI. You can optionally update 
   npx update-browserslist-db@latest
 
 Our CI ignores this informational notice as documented in taskmaster_frontend/README.md.
+
+Tip: If you want to proactively suppress this locally, you can run:
+  npm run browserslist:update
+This script is non-critical and safe; CI environments without network access will still pass.

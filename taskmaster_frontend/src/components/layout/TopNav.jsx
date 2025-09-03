@@ -34,7 +34,7 @@ export default function TopNav({ onMenuClick }) {
         {user ? (
           <>
             <span className="muted hide-sm" style={{ fontSize: '.9rem' }}>{user.email}</span>
-            <button className="btn" onClick={signOut} aria-label="Sign out">Sign out</button>
+            <button className="btn small" onClick={signOut} aria-label="Sign out">Sign out</button>
           </>
         ) : null}
       </div>

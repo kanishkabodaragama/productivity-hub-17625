@@ -14,15 +14,15 @@ export default function Sidebar({ open, onNavigate }) {
     <aside className={`sidebar ${open ? 'open' : ''}`} role="navigation" aria-label="Sidebar">
       <nav className="nav-list">
         <NavLink to="/dashboard" className="nav-link" onClick={onNavigate}>
-          <span className="icon">🏠</span>
+          <span className="icon" aria-hidden>🏠</span>
           <span>Dashboard</span>
         </NavLink>
         <NavLink to="/settings" className="nav-link" onClick={onNavigate}>
-          <span className="icon">⚙️</span>
+          <span className="icon" aria-hidden>⚙️</span>
           <span>Settings</span>
         </NavLink>
         <NavLink to="/publish" className="nav-link" onClick={onNavigate}>
-          <span className="icon">🚀</span>
+          <span className="icon" aria-hidden>🚀</span>
           <span>Publish</span>
         </NavLink>
       </nav>

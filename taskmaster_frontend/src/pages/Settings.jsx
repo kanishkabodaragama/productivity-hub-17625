@@ -198,7 +198,7 @@ function ProfileForm() {
           <button type="button" className="btn ghost" onClick={() => { setName(initialMeta.name || ''); setAvatarUrl(initialMeta.avatar_url || ''); setBio(initialMeta.bio || ''); }}>
             Reset
           </button>
-          <button className="btn primary" type="submit" disabled={loading}>
+          <button className="btn primary" type="submit" disabled={loading} style={{ height: 44 }}>
             {loading ? 'Saving…' : 'Save changes'}
           </button>
         </div>
@@ -341,7 +341,7 @@ function PreferencesForm() {
           <button type="button" className="btn ghost" onClick={() => setTheme('light')}>
             Reset to light
           </button>
-          <button className="btn primary" type="submit" disabled={saving}>
+          <button className="btn primary" type="submit" disabled={saving} style={{ height: 44 }}>
             {saving ? 'Saving…' : 'Save preferences'}
           </button>
         </div>

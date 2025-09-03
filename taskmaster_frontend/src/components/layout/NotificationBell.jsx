@@ -62,7 +62,7 @@ export default function NotificationBell({ onToggle, openExternal, setOpenExtern
         role="button"
       >
         <span className="bell-icon" aria-hidden>🔔</span>
-        {unread > 0 ? <span className="badge" aria-label={`${unread} unread notifications`}>{unread}</span> : null}
+        {unread > 0 ? <span className="badge" aria-live="polite" aria-atomic="true" aria-label={`${unread} unread notifications`}>{unread}</span> : null}
       </button>
     </div>
   );

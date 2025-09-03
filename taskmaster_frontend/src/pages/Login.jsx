@@ -68,7 +68,7 @@ export default function Login() {
             aria-label="Password"
           />
         </label>
-        <button className="btn primary full" type="submit" disabled={loading}>
+        <button className="btn primary full" type="submit" disabled={loading} style={{ height: 44 }}>
           {loading ? 'Signing in…' : 'Sign in'}
         </button>
       </form>

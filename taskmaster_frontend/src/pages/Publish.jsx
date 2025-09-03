@@ -221,7 +221,7 @@ export default function Publish() {
                   </div>
                 ))}
                 <div>
-                  <button type="button" className="btn" onClick={handleAddLink}>
+                  <button type="button" className="btn small" onClick={handleAddLink}>
                     Add link
                   </button>
                 </div>
@@ -229,7 +229,7 @@ export default function Publish() {
             </fieldset>
 
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '.5rem' }}>
-              <button type="submit" className="btn primary" disabled={saving}>
+              <button type="submit" className="btn primary" disabled={saving} style={{ height: 44 }}>
                 {saving ? 'Publishing…' : 'Publish'}
               </button>
             </div>

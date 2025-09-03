@@ -3,8 +3,8 @@
   /* Light theme colors */
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
-  --text-primary: #282c34;
-  --text-secondary: #61dafb;
+  --text-primary: #1a202c;
+  --text-secondary: #2B6CB0;
   --border-color: #e9ecef;
   --button-bg: #2B6CB0; /* match primary */
   --button-text: #ffffff;
@@ -12,12 +12,12 @@
 
 [data-theme="dark"] {
   /* Dark theme colors */
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #282c34;
-  --text-primary: #ffffff;
-  --text-secondary: #61dafb;
-  --border-color: #404040;
-  --button-bg: #0056b3;
+  --bg-primary: #0f1115;
+  --bg-secondary: #171a21;
+  --text-primary: #f7fafc;
+  --text-secondary: #89b4ff;
+  --border-color: #2a2f3a;
+  --button-bg: #2B6CB0;
   --button-text: #ffffff;
 }
 
@@ -112,5 +112,6 @@
   border-radius: 50%;
   margin: 1rem auto;
   animation: spin .8s linear infinite;
+  will-change: transform;
 }
 @keyframes spin { to { transform: rotate(360deg); } }

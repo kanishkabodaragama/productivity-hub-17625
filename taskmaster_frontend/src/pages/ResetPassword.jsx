@@ -52,7 +52,7 @@ export default function ResetPassword() {
               aria-label="Email"
             />
           </label>
-          <button className="btn primary full" type="submit" disabled={loading}>
+          <button className="btn primary full" type="submit" disabled={loading} style={{ height: 44 }}>
             {loading ? 'Sending…' : 'Send reset link'}
           </button>
         </form>

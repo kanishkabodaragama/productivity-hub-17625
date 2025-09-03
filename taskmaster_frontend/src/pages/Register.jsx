@@ -78,7 +78,7 @@ export default function Register() {
           Password
           <input type="password" required placeholder="At least 6 characters" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
-        <button className="btn primary full" type="submit" disabled={loading}>
+        <button className="btn primary full" type="submit" disabled={loading} style={{ height: 44 }}>
           {loading ? 'Creating…' : 'Create account'}
         </button>
       </form>

@@ -88,12 +88,12 @@ export default function PublicProfile() {
   return (
     <div style={{ background: 'var(--bg-soft)', minHeight: '100vh' }}>
       <div className="container" style={{ maxWidth: 820, paddingTop: '2.5rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '.75rem', marginBottom: '1rem' }}>
           <div>
             <h1 className="page-title" style={{ margin: 0 }}>Personal Site</h1>
             <span className="muted" style={{ fontSize: '.9rem' }}>@{slug}</span>
           </div>
-          <Link to="/" className="btn">Back to Home</Link>
+          <Link to="/" className="btn small">Back</Link>
         </div>
 
         {err ? (

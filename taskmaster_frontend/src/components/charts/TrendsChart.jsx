@@ -39,6 +39,11 @@ export default function TrendsChart({ data, height = 300 }) {
           data={series}
           margin={{ top: 8, right: 8, left: 0, bottom: 0 }}
         >
+          {!hasData ? (
+            <text x="50%" y="50%" textAnchor="middle" fill="#a0aec0" fontSize="12">
+              Showing sample data
+            </text>
+          ) : null}
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis dataKey="date" tick={{ fill: '#718096', fontSize: 12 }} />
           <YAxis tick={{ fill: '#718096', fontSize: 12 }} />

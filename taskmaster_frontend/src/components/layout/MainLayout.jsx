@@ -21,7 +21,7 @@ export default function MainLayout() {
       <TopNav onMenuClick={toggleSidebar} />
       <div className="layout-body">
         <Sidebar open={sidebarOpen} onNavigate={closeSidebar} />
-        <main className="content">
+        <main className="content" role="main">
           <Outlet />
         </main>
       </div>

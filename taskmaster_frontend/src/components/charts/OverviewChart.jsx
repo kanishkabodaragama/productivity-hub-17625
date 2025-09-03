@@ -33,7 +33,8 @@ export default function OverviewChart({ data, height = 260 }) {
     { name: 'Sun', value: 13, secondary: 9 },
   ];
 
-  const series = Array.isArray(data) && data.length ? data : mock;
+  const hasData = Array.isArray(data) && data.length;
+  const series = hasData ? data : mock;
 
   return (
     <div style={{ width: '100%', height }}>
@@ -42,6 +43,11 @@ export default function OverviewChart({ data, height = 260 }) {
           data={series}
           margin={{ top: 8, right: 8, left: 0, bottom: 0 }}
         >
+          {!hasData ? (
+            <text x="50%" y="50%" textAnchor="middle" fill="#a0aec0" fontSize="12">
+              Showing sample data
+            </text>
+          ) : null}
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis dataKey="name" tick={{ fill: '#718096', fontSize: 12 }} />
           <YAxis tick={{ fill: '#718096', fontSize: 12 }} />

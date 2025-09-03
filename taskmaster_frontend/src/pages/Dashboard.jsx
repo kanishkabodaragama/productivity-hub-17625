@@ -39,6 +39,10 @@ export default function Dashboard() {
     { date: 'Week 6', completed: 16, planned: 17 },
   ];
 
+  // Future-proofed placeholders for potential async data loading
+  const isLoading = false; // hook up to real loading state when data is fetched asynchronously
+  const hasStats = Array.isArray(stats) && stats.length > 0;
+
   return (
     <div className="container" style={{ maxWidth: 1200 }}>
       <div style={{ display: 'flex', alignItems: 'baseline', gap: '.75rem', marginBottom: '1rem' }}>
@@ -56,34 +60,49 @@ export default function Dashboard() {
           marginBottom: '1rem',
         }}
       >
-        {stats.map((s) => (
-          <div
-            key={s.label}
-            className="card"
-            style={{
-              background: '#fff',
-              border: '1px solid var(--border)',
-              borderRadius: '0.75rem',
-              padding: '1rem',
-              boxShadow: '0 10px 30px rgba(0,0,0,.04)',
-            }}
-          >
-            <div className="muted" style={{ fontSize: '.85rem' }}>{s.label}</div>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '.5rem', marginTop: '.25rem' }}>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800 }}>{s.value}</div>
-              <div style={{ fontSize: '.85rem', color: s.color }}>{s.delta}</div>
-            </div>
-            <div
-              style={{
-                height: 6,
-                borderRadius: 999,
-                background: 'linear-gradient(90deg, var(--bg-soft), ' + s.color + ')',
-                marginTop: '.75rem',
-                opacity: .6
-              }}
-            />
+        {isLoading ? (
+          <>
+            {[...Array(4)].map((_, i) => (
+              <div key={`sk-${i}`} className="card" aria-hidden>
+                <div className="muted" style={{ fontSize: '.85rem' }}>Loading…</div>
+                <div className="spinner" style={{ margin: '.75rem auto' }} />
+              </div>
+            ))}
+          </>
+        ) : !hasStats ? (
+          <div className="card empty" style={{ gridColumn: '1 / -1' }}>
+            No statistics to display yet.
           </div>
-        ))}
+        ) : (
+          stats.map((s) => (
+            <div
+              key={s.label}
+              className="card"
+              style={{
+                background: '#fff',
+                border: '1px solid var(--border)',
+                borderRadius: '0.75rem',
+                padding: '1rem',
+                boxShadow: '0 10px 30px rgba(0,0,0,.04)',
+              }}
+            >
+              <div className="muted" style={{ fontSize: '.85rem' }}>{s.label}</div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '.5rem', marginTop: '.25rem' }}>
+                <div style={{ fontSize: '1.5rem', fontWeight: 800 }}>{s.value}</div>
+                <div style={{ fontSize: '.85rem', color: s.color }}>{s.delta}</div>
+              </div>
+              <div
+                style={{
+                  height: 6,
+                  borderRadius: 999,
+                  background: 'linear-gradient(90deg, rgba(226,232,240,.6), ' + s.color + ')',
+                  marginTop: '.65rem',
+                  opacity: .7
+                }}
+              />
+            </div>
+          ))
+        )}
       </section>
 
       {/* Charts row */}

@@ -9,6 +9,8 @@ Build notes:
     npx update-browserslist-db@latest
   For CI environments without network access or update permissions, this warning can be ignored.
 - In this repo’s CI, this message may appear during optimized builds and is safe to ignore; it does not indicate a failure.
+- Tip: You can also run the included script to refresh browserslist data locally:
+    npm run browserslist:update
 
 Features implemented:
 - Authentication (Supabase)
