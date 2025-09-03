@@ -17,3 +17,8 @@ Features implemented:
 - Realtime Notifications (Supabase Realtime channel with mock fallback)
 - NotificationBell + NotificationsPanel integrated into TopNav
 - Settings page with Profile and Preferences (Supabase metadata + theme persistence)
+- Publishable personal website:
+  - Preview your profile on /publish using the PreviewCard component.
+  - Publish to Supabase table "public_profiles" (mock fallback with localStorage when Supabase is not configured).
+  - Public profiles are accessible at /u/:slug with graceful sample-data fallback.
+  - See assets/supabase.md for table schema, RLS guidance, and environment variables.

@@ -7,6 +7,7 @@ import ResetPassword from '../pages/ResetPassword';
 import Dashboard from '../pages/Dashboard';
 import Settings from '../pages/Settings';
 import Publish from '../pages/Publish';
+import PublicProfile from '../pages/PublicProfile';
 import MainLayout from '../components/layout/MainLayout';
 import ProtectedRoute from '../components/common/ProtectedRoute';
 
@@ -14,7 +15,7 @@ import ProtectedRoute from '../components/common/ProtectedRoute';
  * PUBLIC_INTERFACE
  * AppRoutes configures all top-level routes for the TaskMaster web app using React Router v6.
  * Routes:
- *  - Public: Landing (/), Login (/login), Register (/register), Reset Password (/reset-password)
+ *  - Public: Landing (/), Login (/login), Register (/register), Reset Password (/reset-password), Public profile (/u/:slug)
  *  - Protected (requires auth): Dashboard (/dashboard), Settings (/settings), Publish (/publish)
  */
 export default function AppRoutes() {
@@ -25,6 +26,7 @@ export default function AppRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/u/:slug" element={<PublicProfile />} />
 
       {/* Protected pages wrapped in MainLayout */}
       <Route

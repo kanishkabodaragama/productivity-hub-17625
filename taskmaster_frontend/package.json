@@ -14,7 +14,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "browserslist:update": "npx update-browserslist-db@latest --yes || true"
   },
   "eslintConfig": {
     "extends": "react-app"

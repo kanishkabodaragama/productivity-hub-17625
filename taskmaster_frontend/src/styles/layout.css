@@ -158,7 +158,7 @@ a:hover { opacity: .9; }
 }
 .btn.full { width: 100%; }
 
-.cta-group { display: flex; gap: .75rem; }
+.cta-group { display: flex; gap: .75rem; flex-wrap: wrap; }
 
 .form { display: grid; gap: .75rem; margin-top: 1rem; }
 .form-label { display: grid; gap: .375rem; font-size: .9rem; }

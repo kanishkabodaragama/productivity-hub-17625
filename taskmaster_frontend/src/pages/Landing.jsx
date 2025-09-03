@@ -15,6 +15,7 @@ export default function Landing() {
       <div className="cta-group">
         <Link className="btn primary" to="/register">Get Started</Link>
         <Link className="btn ghost" to="/login">Sign In</Link>
+        <Link className="btn" to="/u/demo">See a sample profile</Link>
       </div>
     </div>
   );
