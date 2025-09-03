@@ -1,22 +1,32 @@
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 /**
  * PUBLIC_INTERFACE
  * ProtectedRoute guards child routes that require authentication.
- * For now, it uses a simple localStorage token check ("tm_auth").
- * Replace with real auth integration (e.g., Supabase) later.
  *
  * Props:
  *  - children: ReactNode - the protected component or layout
  *
- * Returns the children if authenticated, otherwise redirects to /login with a from state.
+ * Behavior:
+ *  - While auth is loading, renders a minimal spinner/skeleton
+ *  - If no session, redirects to /login preserving "from"
+ *  - Otherwise renders children
  */
 export default function ProtectedRoute({ children }) {
   const location = useLocation();
-  const isAuthed = Boolean(localStorage.getItem('tm_auth')); // TODO: integrate Supabase session
+  const { session, loading } = useAuth();
 
-  if (!isAuthed) {
+  if (loading) {
+    return (
+      <div className="container" style={{ padding: '2rem', textAlign: 'center' }}>
+        <div className="spinner" aria-label="Loading" />
+      </div>
+    );
+  }
+
+  if (!session) {
     return <Navigate to="/login" replace state={{ from: location }} />;
   }
 
