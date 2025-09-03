@@ -5,9 +5,15 @@ import AppRoutes from './routes';
 
 // PUBLIC_INTERFACE
 function App() {
-  // default to light theme as per project style
+  // Initialize theme preference on mount using localStorage or default to light
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', 'light');
+    try {
+      const saved = localStorage.getItem('tm_theme');
+      const theme = saved === 'dark' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (_e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
   }, []);
 
   return (

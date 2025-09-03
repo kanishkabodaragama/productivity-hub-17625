@@ -8,6 +8,7 @@ Build notes:
   This is informational and does not break the build. To update locally (optional):
     npx update-browserslist-db@latest
   For CI environments without network access or update permissions, this warning can be ignored.
+- In this repo’s CI, this message may appear during optimized builds and is safe to ignore; it does not indicate a failure.
 
 Features implemented:
 - Authentication (Supabase)
@@ -15,3 +16,4 @@ Features implemented:
 - Dashboard with charts
 - Realtime Notifications (Supabase Realtime channel with mock fallback)
 - NotificationBell + NotificationsPanel integrated into TopNav
+- Settings page with Profile and Preferences (Supabase metadata + theme persistence)
